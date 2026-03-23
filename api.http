@@ -1,0 +1,24 @@
+### Create Order (REST)
+POST http://localhost:8080/order
+Content-Type: application/json
+
+{
+  "name": "Fernando",
+  "amount": 123.45,
+  "status": "pending"
+}
+
+### List Orders (REST)
+GET http://localhost:8080/order
+
+### Create Order (GraphQL)
+POST http://localhost:8081/query
+Content-Type: application/json
+
+{"query":"mutation { createOrder(input: { name: \"Fernando\", amount: 99.99, status: \"pending\" }) { id name amount status createdAt } }"}
+
+### List Orders (GraphQL)
+POST http://localhost:8081/query
+Content-Type: application/json
+
+{"query":"{ listOrders { id name amount status createdAt } }"}

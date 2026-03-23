@@ -1,0 +1,21 @@
+type Order {
+  id:        ID!
+  name:      String!
+  amount:    Float!
+  status:    String!
+  createdAt: String!
+}
+
+input CreateOrderInput {
+  name:   String!
+  amount: Float!
+  status: String!
+}
+
+type Query {
+  listOrders: [Order!]!
+}
+
+type Mutation {
+  createOrder(input: CreateOrderInput!): Order!
+}
